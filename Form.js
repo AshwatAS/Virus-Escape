@@ -15,10 +15,13 @@ class Form {
         this.button2=createButton("Submit");
 //the answer input
         this.answer = createInput('Write your answer in block letters only');
+//random variable
+        random=Math.round(Math.random()*4);
     }
 //checks if the answer to the question is correct or incorrect
     check(){
       var vacname=this.input2.value();
+      //console.log(random+"check");
       if(random==0){
           if(this.answer.value()=="CHINA"){
               //gamestate=1;
@@ -26,7 +29,7 @@ class Form {
           }
           else{
             this.error.html("Sorry the answer,"+this.answer.value()+" is incorrect. Your first test on the "+ vacname+" failed because you did not have all the knowledge about corona virus."+"Kindly click the restart button and reload the page to play again.");
-              this.error.position(50,300);
+            this.error.position(50,300);
           }
       }
       if(random==1){
@@ -59,7 +62,7 @@ class Form {
           this.error.position(50,300);
         }
       }
-      else{
+      if(random==4){
         if(this.answer.value()=="WORLD HEALTH ORGANISATION"){
             //gamestate=1;
             console.log("sucess")
@@ -73,8 +76,6 @@ class Form {
     display(){
 //title of the game
       var title = createElement('h1');
-//random variable
-      var random=Math.round(Math.random(0,4));
       title.html("Virus Escape");
       title.position(600, 0);
 //positions and sizes of all the user inputs.
@@ -92,6 +93,8 @@ class Form {
         this.input2.hide();
         this.button.hide();
 //question is presented
+        //console.log(random);
+        //console.log(questions[random]);
         this.question.html(questions[random]);
         this.question.position(130, 100);
         this.answer.position(130,180);
