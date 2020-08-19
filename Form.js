@@ -13,6 +13,8 @@ class Form {
         this.question=createElement("h2");
         this.greeting=createElement("h3");
         this.button2=createButton("Submit");
+        this.button3=createButton("Him");
+        this.button4=createButton("Her");
         this.title = createElement('h1');
         //this.title.style.colour="white";
 //the answer input
@@ -98,17 +100,54 @@ class Form {
         this.input.hide();
         this.input2.hide();
         this.button.hide();
+        doc1=createSprite(670,550,10,10);
+        doc1.addImage(mdocIMG);
+        doc1.scale=0.2
+        this.button3.position(650,700);
+        doc2=createSprite(850,550,10,10);
+        doc2.addImage(fdocIMG);
+        doc2.scale=0.3
+        this.button4.position(850,700);
+
 //question is presented
         //console.log(random);
         //console.log(questions[random]);
+        //this.question.html(questions[random]);
+        //this.question.position(130, 100);
+        //this.answer.position(130,180);
+        //this.answer.size(250,50);
+        //this.button2.position(130,250);
+        this.greeting.html("Hi"+" "+docname+"!Welcome to virus escape. This game has four stages."+"You need to pass through 3 stages including the next one in order to sucessfully create the "+vacname+". Select your doctor to move on to the stage.");
+        this.greeting.position(50,200);
+      });
+      this.button3.mousePressed(()=>{
+        doc2.destroy();
+        doc1.destroy();
+        this.button4.hide();
+        gamestate=1;
+        this.greeting.html("Welcome to stage 1. Answer the question to move on to the next stage.")
+        this.greeting.position(150,400);
+        this.button3.hide();
         this.question.html(questions[random]);
         this.question.position(130, 100);
         this.answer.position(130,180);
         this.answer.size(250,50);
         this.button2.position(130,250);
-        this.greeting.html("Hi"+" "+docname+"!Welcome to virus escape. This game has four stages."+"You need to pass through 3 stages including this one in order to sucessfully create the "+vacname+".");
-        this.greeting.position(700,200);
-      });
+      })
+      this.button4.mousePressed(()=>{
+        doc1.destroy();
+        doc2.destroy();
+        gamestate=1;
+        this.button4.hide();
+        this.greeting.html("Welcome to stage 2. Answer the question to move on to the next stage.")
+        this.greeting.position(50,400);
+        this.button3.hide();
+        this.question.html(questions[random]);
+        this.question.position(130, 100);
+        this.answer.position(130,180);
+        this.answer.size(250,50);
+        this.button2.position(130,250);
+      })
 //the submit button condition
       this.button2.mousePressed(()=>{
 //hides all unwanted objects and checks the answer by calling the check function.
@@ -117,7 +156,7 @@ class Form {
         this.question.hide();
         this.button2.hide();
         this.check();
-        gamestate=1;
+        gamestate=2;
         if(checkpoint==1){
           maze=new Maze();
         }
