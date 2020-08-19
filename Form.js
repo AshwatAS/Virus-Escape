@@ -13,6 +13,8 @@ class Form {
         this.question=createElement("h2");
         this.greeting=createElement("h3");
         this.button2=createButton("Submit");
+        this.title = createElement('h1');
+        //this.title.style.colour="white";
 //the answer input
         this.answer = createInput('Write your answer in block letters only');
 //random variable
@@ -25,7 +27,8 @@ class Form {
       if(random==0){
           if(this.answer.value()=="CHINA"){
               //gamestate=1;
-              console.log("sucess")
+              console.log("sucess");
+              checkpoint=1;
           }
           else{
             this.error.html("Sorry the answer,"+this.answer.value()+" is incorrect. Your first test on the "+ vacname+" failed because you did not have all the knowledge about corona virus."+"Kindly click the restart button and reload the page to play again.");
@@ -35,7 +38,8 @@ class Form {
       if(random==1){
         if(this.answer.value()=="2019"|| this.answer.value()=="2020"){
             //gamestate=1;
-            console.log("sucess")
+            console.log("sucess");
+            checkpoint=1;
         }
         else{
           this.error.html("Sorry the answer,"+this.answer.value()+" is incorrect. Your first test on the "+vacname+" failed because you did not have all the knowledge about corona virus."+"Kindly click the restart button and reload the page to play again.");
@@ -45,7 +49,8 @@ class Form {
       if(random==2){
         if(this.answer.value()=="MARCH"){
             //gamestate=1;
-            console.log("sucess")
+            console.log("sucess");
+            checkpoint=1;
         }
         else{
           this.error.html("Sorry the answer,"+this.answer.value()+" is incorrect. Your first test on the "+vacname+" failed because you did not have all the knowledge about corona virus."+"Kindly click the restart button and reload the page to play again.");
@@ -55,7 +60,8 @@ class Form {
       if(random==3){
         if(this.answer.value()=="SYLVIA BROWNE"){
            //gamestate=1;
-           console.log("sucess")
+           console.log("sucess");
+           checkpoint=1;
         }
         else{
           this.error.html("Sorry the answer,"+this.answer.value()+" is incorrect. Your first test on the "+vacname+" failed because you did not have all the knowledge about corona virus."+"Kindly click the restart button and reload the page to play again.");
@@ -65,7 +71,8 @@ class Form {
       if(random==4){
         if(this.answer.value()=="WORLD HEALTH ORGANISATION"){
             //gamestate=1;
-            console.log("sucess")
+            console.log("sucess");
+            checkpoint=1;
         }
         else{
           this.error.html("Sorry the answer,"+this.answer.value()+" is incorrect. Your first test on the "+vacname+" failed because you did not have all the knowledge about corona virus."+"Kindly click the restart button and reload the page to play again.");
@@ -75,9 +82,8 @@ class Form {
   }
     display(){
 //title of the game
-      var title = createElement('h1');
-      title.html("Virus Escape");
-      title.position(600, 0);
+      this.title.html("Virus Escape");
+      this.title.position(600, 0);
 //positions and sizes of all the user inputs.
       this.input.position(600, 160);
       this.input.size(180,50);
@@ -111,9 +117,14 @@ class Form {
         this.question.hide();
         this.button2.hide();
         this.check();
+        gamestate=1;
+        if(checkpoint==1){
+          maze=new Maze();
+        }
       })
   
     }
+  
 
   }
   
