@@ -48,15 +48,79 @@ class Maze{
         m29=createSprite(1025,150,10,300);
         m30=createSprite(220,310,120,10);
 
-        player=createSprite(50,30,10,10);
+        player=createSprite(50,80,10,10);
+        if(g==1){
+            console.log("m");
+            player.addImage(mdocIMG);
+            player.scale=0.03;
+        }
+        if(g==2){
+            console.log("f");
+            player.addImage(fdocIMG);
+            player.scale=0.03;
+        }
         enemy1=createSprite(600,30,10,10);
         enemy2=createSprite(620,280,10,10);
         enemy3=createSprite(580,580,10,10);
-        vaccine=createSprite(1180,590,10,10);
-        for(var i=0;i<=9;i++){
-            bgroup.add(b[i]);
-        }
+        vaccine=createSprite(1163,550,10,10);
+        vaccine.addImage(vacIMG);
+        vaccine.scale=0.09;
+        agroup.add(a1);
+        agroup.add(a2);
+        agroup.add(a3);
+        agroup.add(a4);
+        bgroup.add(b1);
+        bgroup.add(b2);
+        bgroup.add(b3);
+        bgroup.add(b4);
+        bgroup.add(b5);
+        bgroup.add(b6);
+        bgroup.add(b7);
+        bgroup.add(b8);
+        bgroup.add(b9);
+        cgroup.add(c1);
+        cgroup.add(c2);
+        cgroup.add(c3);
+        mgroup.add(m1);
+        mgroup.add(m2);
+        mgroup.add(m3);
+        mgroup.add(m4);
+        mgroup.add(m5);
+        mgroup.add(m6);
+        mgroup.add(m7);
+        mgroup.add(m8);
+        mgroup.add(m9);
+        mgroup.add(m10);
+        mgroup.add(m11);
+        mgroup.add(m12);
+        mgroup.add(m13);
+        mgroup.add(m14);
+        mgroup.add(m15);
+        mgroup.add(m16);
+        mgroup.add(m17);
+        mgroup.add(m18);
+        mgroup.add(m19);
+        mgroup.add(m20);
+        mgroup.add(m21);
+        mgroup.add(m22);
+        mgroup.add(m23);
+        mgroup.add(m24);
+        mgroup.add(m25);
+        mgroup.add(m26);
+        mgroup.add(m27);
+        mgroup.add(m28);
+        mgroup.add(m29);
+        mgroup.add(m30);
     }
     display(){
+        console.log(bgroup);
+        if(bgroup.isTouching(player)){
+            console.log("touch");
+        }
+        cgroup.collide(player);
+        if(mgroup.collide(player)){
+            console.log("touch");
+        }
+        agroup.collide(player);
     }
 }

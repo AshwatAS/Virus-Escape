@@ -71,7 +71,7 @@ class Form {
         }
       }
       if(random==4){
-        if(this.answer.value()=="WORLD HEALTH ORGANISATION"){
+        if(this.answer.value()=="WORLD HEALTH ORGANISATION" || this.answer.value()=="WORLD HEALTH ORGANIZATION"){
             //gamestate=1;
             console.log("sucess");
             checkpoint=1;
@@ -123,6 +123,7 @@ class Form {
       this.button3.mousePressed(()=>{
         doc2.destroy();
         doc1.destroy();
+        g=1;
         this.button4.hide();
         gamestate=1;
         this.greeting.html("Welcome to stage 1. Answer the question to move on to the next stage.")
@@ -138,6 +139,7 @@ class Form {
         doc1.destroy();
         doc2.destroy();
         gamestate=1;
+        g=2;
         this.button4.hide();
         this.greeting.html("Welcome to stage 2. Answer the question to move on to the next stage.")
         this.greeting.position(50,400);
@@ -159,6 +161,7 @@ class Form {
         gamestate=2;
         if(checkpoint==1){
           maze=new Maze();
+          maze.display();
         }
       })
   
