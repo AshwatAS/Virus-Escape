@@ -1,7 +1,7 @@
 var canvas,g,form,questions,random,maze,player,enemy1,enemy2,enemy3,vaccine,quizIMG,endIMG,parkourIMG,mdocIMG,fdocIMG;
 var checkpoint=0;
 var doc1,doc2,b1,b2,b3,b4,b5,b6,b7,b8,b9,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16,m17,m18,m19,m20,m21,m22,m23,m24,m25,m26,m27,m28,m29,m30,a1,a2,a3,a4,c1,c2,c3;
-var bgroup,mgroup,cgroup,agroup;
+var bgroup,mgroup,cgroup,agroup,particlegroup,enemyIMG,parkour,particleIMG;
 //gamestate
 var gamestate=0;
 function preload(){
@@ -11,6 +11,8 @@ function preload(){
   mdocIMG=loadImage("mdoctor.png");
   fdocIMG=loadImage("ydoctor.png");
   vacIMG=loadImage("vac.png");
+  enemyIMG=loadImage("virus.png");
+  particleIMG=loadImage("particle.png");
 }
 function setup() {
 //canvas size
@@ -19,6 +21,9 @@ function setup() {
   mgroup=new Group();
   agroup=new Group();
   cgroup=new Group();
+  particlegroup=new Group();
+  enemygroup=new Group();
+  enemy2group=new Group();
 //form object
   form=new Form;
 }
@@ -29,6 +34,13 @@ function draw() {
   }
   if(checkpoint==1){
     background(0);
+    //maze=new Maze();
+    maze.display();
+  }
+  if(checkpoint==2){
+    background(parkourIMG);
+    parkour=new Parkour();
+    parkour.display();
   }
 //displaying the form. 
   form.display();

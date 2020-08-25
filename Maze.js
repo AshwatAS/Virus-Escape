@@ -50,18 +50,31 @@ class Maze{
 
         player=createSprite(50,80,10,10);
         if(g==1){
-            console.log("m");
+            //console.log("m");
             player.addImage(mdocIMG);
             player.scale=0.03;
         }
         if(g==2){
-            console.log("f");
+            //console.log("f");
             player.addImage(fdocIMG);
             player.scale=0.03;
         }
         enemy1=createSprite(600,30,10,10);
         enemy2=createSprite(620,280,10,10);
+        enemy1.velocityX=-3;
+        enemy1.velocityY=1;
+        enemy1.addImage(enemyIMG);
+        enemy1.scale=0.03
+        enemy2.velocityX=3;
+        enemy2.velocityY=-1;
+        enemy2.addImage(enemyIMG);
+        enemy2.scale=0.03;
         enemy3=createSprite(580,580,10,10);
+        enemy3.velocityX=-3;
+        enemy3.velocityY=-1;
+        enemy3.addImage(enemyIMG);
+        enemy3.scale=0.03;
+        console.log("whatttt");
         vaccine=createSprite(1163,550,10,10);
         vaccine.addImage(vacIMG);
         vaccine.scale=0.09;
@@ -113,14 +126,28 @@ class Maze{
         mgroup.add(m30);
     }
     display(){
-        console.log(bgroup);
-        if(bgroup.isTouching(player)){
-            console.log("touch");
+        //console.log(bgroup);
+        player.bounceOff(bgroup)//{
+            //console.log("touch");
+        //}
+        player.bounceOff(cgroup);
+        player.bounceOff(mgroup);
+        player.bounceOff(agroup);
+        enemy3.bounceOff(bgroup);
+        enemy1.bounceOff(bgroup);
+        enemy2.bounceOff(bgroup);
+        enemy3.bounceOff(agroup);
+        enemy3.bounceOff(cgroup);
+        enemy3.bounceOff(mgroup);
+        enemy2.bounceOff(agroup);
+        enemy2.bounceOff(cgroup);
+        enemy2.bounceOff(mgroup);
+        enemy1.bounceOff(agroup);
+        enemy1.bounceOff(cgroup);
+        enemy1.bounceOff(mgroup);
+        if(player.isTouching(vaccine)){
+            console.log("flip");
+            checkpoint=2;
         }
-        cgroup.collide(player);
-        if(mgroup.collide(player)){
-            console.log("touch");
-        }
-        agroup.collide(player);
     }
 }

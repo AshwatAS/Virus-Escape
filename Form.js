@@ -84,6 +84,7 @@ class Form {
   }
     display(){
 //title of the game
+      console.log("what");
       this.title.html("Virus Escape");
       this.title.position(600, 0);
 //positions and sizes of all the user inputs.
@@ -117,7 +118,7 @@ class Form {
         //this.answer.position(130,180);
         //this.answer.size(250,50);
         //this.button2.position(130,250);
-        this.greeting.html("Hi"+" "+docname+"!Welcome to virus escape. This game has four stages."+"You need to pass through 3 stages including the next one in order to sucessfully create the "+vacname+". Select your doctor to move on to the stage.");
+        this.greeting.html("Hi"+" "+docname+"!Welcome to virus escape. This game was created during the coronavirus pandemic."+"You need to pass through 3 stages including the next one in order to sucessfully create the "+vacname+". Select your doctor to move on to the first stage.");
         this.greeting.position(50,200);
       });
       this.button3.mousePressed(()=>{
@@ -141,7 +142,7 @@ class Form {
         gamestate=1;
         g=2;
         this.button4.hide();
-        this.greeting.html("Welcome to stage 2. Answer the question to move on to the next stage.")
+        this.greeting.html("Welcome to stage 1. Answer the question to move on to the next stage.")
         this.greeting.position(50,400);
         this.button3.hide();
         this.question.html(questions[random]);
@@ -161,7 +162,7 @@ class Form {
         gamestate=2;
         if(checkpoint==1){
           maze=new Maze();
-          maze.display();
+          //maze.display();
         }
       })
   
