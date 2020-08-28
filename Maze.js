@@ -146,8 +146,21 @@ class Maze{
         enemy1.bounceOff(cgroup);
         enemy1.bounceOff(mgroup);
         if(player.isTouching(vaccine)){
-            console.log("flip");
+            //console.log("flip");
             checkpoint=2;
+            mgroup.destroyEach();
+            agroup.destroyEach();
+            cgroup.destroyEach();
+            bgroup.destroyEach();
+            enemy1.destroy();
+            enemy2.destroy();
+            enemy3.destroy();
+            vaccine.destroy();
+            parkour=new Parkour();
+        }
+        if(player.isTouching(enemy1) || player.isTouching(enemy2) || player.isTouching(enemy3)){
+            gamestate="end";
+            end=new Error();
         }
     }
 }
