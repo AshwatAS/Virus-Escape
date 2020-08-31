@@ -24,7 +24,7 @@ class Form {
     }
 //checks if the answer to the question is correct or incorrect
     check(){
-      var vacname=this.input2.value();
+      vacname=this.input2.value();
       //console.log(random+"check");
       if(random==0){
           if(this.answer.value()=="CHINA"){
@@ -109,8 +109,8 @@ class Form {
         doc2.addImage(fdocIMG);
         doc2.scale=0.3
         this.button4.position(850,700);
-        this.greeting.html("Hi"+" "+docname+"!Welcome to virus escape. This game was created during the coronavirus pandemic."+"You need to pass through 3 stages including the next one in order to sucessfully create the "+vacname+". Select your doctor to move on to the first stage.");
-        this.greeting.position(50,200);
+        this.greeting.html("Hi"+" "+docname+"!Welcome to virus escape. This game was created during the coronavirus pandemic."+"You need to pass through 3 stages including the next one in order to sucessfully create the "+vacname+".In the first stage you have to answer a question about the coronavirus so that we know you are capable of creating the vaccine. Then you have to pass a maze to obtain the vaccine while avoiding the viruses and finally you have to cross a parkour stage. Select your doctor to move on to the first stage.");
+        this.greeting.position(20,200);
       });
       this.button3.mousePressed(()=>{
         doc2.destroy();

@@ -74,7 +74,7 @@ class Maze{
         enemy3.velocityY=-1;
         enemy3.addImage(enemyIMG);
         enemy3.scale=0.03;
-        console.log("whatttt");
+        //console.log("whatttt");
         vaccine=createSprite(1163,550,10,10);
         vaccine.addImage(vacIMG);
         vaccine.scale=0.09;
@@ -156,10 +156,19 @@ class Maze{
             enemy2.destroy();
             enemy3.destroy();
             vaccine.destroy();
+            player.destroy();
             parkour=new Parkour();
         }
         if(player.isTouching(enemy1) || player.isTouching(enemy2) || player.isTouching(enemy3)){
             gamestate="end";
+            enemy1.destroy();
+            enemy2.destroy();
+            enemy3.destroy();
+            agroup.destroyEach();
+            vaccine.destroy();
+            bgroup.destroyEach();
+            cgroup.destroyEach();
+            mgroup.destroyEach();
             end=new Error();
         }
     }
