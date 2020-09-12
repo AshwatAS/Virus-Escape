@@ -16,6 +16,7 @@ class Form {
         this.button3=createButton("Him");
         this.button4=createButton("Her");
         this.title = createElement('h1');
+        title=this.title;
         //this.title.style.colour="white";
 //the answer input
         this.answer = createInput('Write your answer in block letters only');
@@ -29,7 +30,7 @@ class Form {
       if(random==0){
           if(this.answer.value()=="CHINA"){
               //gamestate=1;
-              console.log("sucess");
+              //console.log("sucess");
               checkpoint=1;
           }
           else{
@@ -40,7 +41,7 @@ class Form {
       if(random==1){
         if(this.answer.value()=="2019"|| this.answer.value()=="2020"){
             //gamestate=1;
-            console.log("sucess");
+            //console.log("sucess");
             checkpoint=1;
         }
         else{
@@ -51,7 +52,7 @@ class Form {
       if(random==2){
         if(this.answer.value()=="MARCH"){
             //gamestate=1;
-            console.log("sucess");
+            //console.log("sucess");
             checkpoint=1;
         }
         else{
@@ -62,7 +63,7 @@ class Form {
       if(random==3){
         if(this.answer.value()=="SYLVIA BROWNE"){
            //gamestate=1;
-           console.log("sucess");
+           //console.log("sucess");
            checkpoint=1;
         }
         else{
@@ -73,7 +74,7 @@ class Form {
       if(random==4){
         if(this.answer.value()=="WORLD HEALTH ORGANISATION" || this.answer.value()=="WORLD HEALTH ORGANIZATION"){
             //gamestate=1;
-            console.log("sucess");
+            //console.log("sucess");
             checkpoint=1;
         }
         else{
@@ -153,6 +154,7 @@ class Form {
         this.button2.hide();
         this.check();
         if(checkpoint==1){
+          this.title.style("color","#FFFFFF");
           maze=new Maze();
           //maze.display();
         }

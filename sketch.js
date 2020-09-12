@@ -1,4 +1,4 @@
-var canvas,g,form,vacname,questions,random,maze,player,enemy1,enemy2,enemy3,vaccine,quizIMG,endIMG,parkourIMG,mdocIMG,fdocIMG;
+var canvas,g,title,form,vacname,questions,random,maze,player,enemy1,enemy2,enemy3,vaccine,quizIMG,endIMG,parkourIMG,mdocIMG,fdocIMG;
 var checkpoint=-1,end;
 var score=0;
 var count=0;
@@ -31,7 +31,7 @@ function setup() {
 }
 
 function draw() {
-  console.log(gamestate);
+  //console.log(gamestate);
   if(gamestate=="play"){
     if(checkpoint==0){
       background(quizIMG);
@@ -52,6 +52,7 @@ function draw() {
     //background(endIMG);
     player.destroy();
     end.display();
+    title.style("color","#000000");
   }
 //displaying the form. 
   form.display();

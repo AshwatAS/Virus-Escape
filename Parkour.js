@@ -3,6 +3,7 @@ class Parkour{
       this.intro=createElement("h4");
       this.intro.html("Welcome to the last stage. Avoid the viruses and collect as many particles as you can to make your vaccine pure and more effective.");
       this.intro.position(725,500);
+      this.intro.style("color","#FFFFFF")
       //document.getElementById(this.intro).style.color="white";
       player=createSprite(725,700);
       if(g==1){
@@ -34,6 +35,9 @@ class Parkour{
         enemy.lifetime=randx/0.001;
         enemy.collide(particlegroup);
         enemygroup.add(enemy);
+      }
+      if(World.frameCount%600==0){
+        this.intro.hide();
       }
       if(World.frameCount%160==0){
         //console.log("250");
